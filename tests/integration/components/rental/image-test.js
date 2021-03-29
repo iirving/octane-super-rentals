@@ -13,7 +13,7 @@ module('Integration | Component | rental/image', function(hooks) {
         alt="Teaching Tomster"
       />
     `)
- 
+
     assert
       .dom('.image img')
       .exists()

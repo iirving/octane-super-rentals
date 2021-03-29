@@ -9,7 +9,7 @@ module('Integration | Component | jumbo', function(hooks) {
   test('it renders the Jumbo header with tomster and the content inside', async function(assert) {
 
     let textToRender=`Hello World`
-    
+
     await render(hbs`<Jumbo>Hello World</Jumbo>`);
 
     assert.dom('.jumbo').exists();
