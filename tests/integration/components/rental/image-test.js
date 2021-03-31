@@ -1,7 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, click } from '@ember/test-helpers';
-// @ts-ignore
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | rental/image', function(hooks) {

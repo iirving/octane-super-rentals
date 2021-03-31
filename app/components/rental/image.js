@@ -1,6 +1,4 @@
-// @ts-ignore
 import Component from '@glimmer/component';
-// @ts-ignore
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
