@@ -5,7 +5,7 @@ const MAPBOX_API = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static';
 
 export default class MapComponent extends Component {
   get src() {
-    let { lng, lat, width, height, zoom} = this.args;
+    let { lng, lat, width, height, zoom } = this.args;
 
     let coordinates = `${lng},${lat},${zoom}`;
     let dimensions = `${width}x${height}`;
@@ -15,6 +15,6 @@ export default class MapComponent extends Component {
   }
 
   get token() {
-    return encodeURIComponent(ENV.MAPBOX_ACCESS_TOKEN)
+    return encodeURIComponent(ENV.MAPBOX_ACCESS_TOKEN);
   }
 }
