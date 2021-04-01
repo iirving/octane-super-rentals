@@ -1,5 +1,4 @@
 import EmberRouter from '@ember/routing/router';
-// @ts-ignore
 import config from 'octane-super-rentals/config/environment';
 
 export default class Router extends EmberRouter {
@@ -8,8 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('about')
-  this.route('contact',
-    { path: '/getting-in-touch'}
-  );
+  this.route('about');
+  this.route('contact', { path: '/getting-in-touch' });
+  this.route('rental', { path: '/rentals/:rental_id' });
 });
