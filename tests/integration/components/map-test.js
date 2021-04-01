@@ -4,11 +4,10 @@ import { render, find } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import ENV from 'octane-super-rentals/config/environment';
 
-module('Integration | Component | map', function(hooks) {
+module('Integration | Component | map', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders a map for the specified params', async function(assert) {
-
+  test('it renders a map for the specified params', async function (assert) {
     await render(hbs`<Map />`);
 
     assert.equal(this.element.textContent.trim(), '');
@@ -25,13 +24,13 @@ module('Integration | Component | map', function(hooks) {
     assert
       .dom('.map img')
       .exists()
-      .hasAttribute('alt','Map image at coordinates 37.7797,-122.4184')
+      .hasAttribute('alt', 'Map image at coordinates 37.7797,-122.4184')
       .hasAttribute('src')
       .hasAttribute('width', '150')
       .hasAttribute('height', '120');
 
-    let { src } = find('.map img')
-    let token = encodeURIComponent(ENV.MAPBOX_ACCESS_TOKEN)
+    let { src } = find('.map img');
+    let token = encodeURIComponent(ENV.MAPBOX_ACCESS_TOKEN);
 
     assert.ok(
       src.startsWith('https://api.mapbox.com/'),
@@ -54,14 +53,13 @@ module('Integration | Component | map', function(hooks) {
     );
   });
 
-test('it updates the `src` attribute when the arguments change', async function (assert) {
-
+  test('it updates the `src` attribute when the arguments change', async function (assert) {
     this.setProperties({
       lat: 37.7749,
       lng: -122.4194,
       zoom: 10,
       width: 150,
-      height: 120,
+      height: 120
     });
 
     await render(hbs`<Map
@@ -87,7 +85,7 @@ test('it updates the `src` attribute when the arguments change', async function 
     this.setProperties({
       width: 300,
       height: 200,
-      zoom: 12,
+      zoom: 12
     });
 
     assert.ok(
@@ -102,7 +100,7 @@ test('it updates the `src` attribute when the arguments change', async function 
 
     this.setProperties({
       lat: 47.6062,
-      lng: -122.3321,
+      lng: -122.3321
     });
 
     assert.ok(
@@ -115,7 +113,6 @@ test('it updates the `src` attribute when the arguments change', async function 
       'the src should include the width,height and @2x parameter'
     );
   });
-
 
   test('the default alt attribute can be overridden', async function (assert) {
     await render(hbs`<Map
