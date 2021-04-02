@@ -36,7 +36,7 @@ module('Integration | Component | rental/detailed', function (hooks) {
     assert.dom('.jumbo a.button').containsText('share on Fracer SM');
   });
 
-  test('it renders detial information about a property', async function (assert) {
+  test('it renders detailed information about a property', async function (assert) {
     await render(hbs`<Rental::Detailed @rental={{this.rental}} />`);
 
     assert.dom('article').hasClass('rental');
