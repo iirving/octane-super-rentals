@@ -33,7 +33,7 @@ module('Integration | Component | rental/detailed', function (hooks) {
     assert.dom('.jumbo').exists();
     assert.dom('.jumbo h2').containsText('Grand Old Mansion');
     assert.dom('.jumbo p').containsText('Nice find near San Francisco');
-    assert.dom('.jumbo a.button').containsText('share on Fracer SM');
+    assert.dom('.jumbo a.button').containsText('share on Twitter');
   });
 
   test('it renders detailed information about a property', async function (assert) {

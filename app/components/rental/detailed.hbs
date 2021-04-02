@@ -1,40 +1,58 @@
 <Jumbo>
-  <h2>{{@rental.title}}</h2>
-  <p>Nice find near {{@rental.city}}</p>
-  <a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
-    share on Fracer SM
-  </a>
+  <h2>
+    {{@rental.title}}
+  </h2>
+  <p>
+    Nice find near
+    {{@rental.city}}
+  </p>
+  <ShareButton
+    @text="Check out {{@rental.title}} on Super Rentals!"
+    @hashtags="vacation,travel,authentic,blessed,superrentals"
+    @via="emberjs"
+  >
+    share on Twitter
+  </ShareButton>
 </Jumbo>
-
 <article class="rental detailed">
-
-  <Rental::Image
-    src={{@rental.image}}
-    alt="A picture of {{@rental.title}}"
-  />
-
+  <Rental::Image src={{@rental.image}} alt="A picture of {{@rental.title}}" />
   <div class="details">
     <h3>
-      About {{@rental.title}}
+      About
+      {{@rental.title}}
     </h3>
     <div class="detail owner">
-      <span>Owner:</span> {{@rental.owner}}
+      <span>
+        Owner:
+      </span>
+      {{@rental.owner}}
     </div>
     <div class="detail type">
-      <span>Type:</span> {{@rental.type}} - {{@rental.category}}
+      <span>
+        Type:
+      </span>
+      {{@rental.type}}
+      -
+      {{@rental.category}}
     </div>
     <div class="detail location">
-      <span>Location:</span> {{@rental.city}}
+      <span>
+        Location:
+      </span>
+      {{@rental.city}}
     </div>
     <div class="detail bedrooms">
-      <span>Number of bedrooms:</span> {{@rental.bedrooms}}
+      <span>
+        Number of bedrooms:
+      </span>
+      {{@rental.bedrooms}}
     </div>
-
     <div class="detail description">
-      <p>{{@rental.description}}</p>
+      <p>
+        {{@rental.description}}
+      </p>
     </div>
   </div>
-
   <Map
     @lat={{@rental.location.lat}}
     @lng={{@rental.location.lng}}
@@ -43,6 +61,4 @@
     @height="150"
     alt="A map of {{@rental.title}}"
   />
-
-
 </article>
